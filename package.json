@@ -1,0 +1,18 @@
+{
+  "name": "profiler-api",
+  "version": "0.0.1",
+  "description": "API for the profiler",
+	"author": "Krzysztof Woliński",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bodziowagh/profiler-api.git"
+  },
+  "homepage": "https://github.com/bodziowagh/profiler-api#readme",
+  "dependencies": {
+    "webpack": "^4.29.0"
+  },
+	"scripts": {
+    "start": "node src/index.ts"
+  }
+}
