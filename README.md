@@ -7,3 +7,12 @@ It's a profiler's server side application (profiler and profiler-admin both can 
 ### How to run?
 
 Copy the repository, install the dependencies using `npm i` and then just `npm start`
+
+
+### Tech stack 📚
+
+- Node.js
+- Express
+- Babel
+- Webpack
+- Docker
