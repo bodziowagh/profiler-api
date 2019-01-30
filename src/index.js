@@ -1,24 +1,24 @@
 // var http = require("http");
 import http from "http";
+import express from "express";
 import "dotenv/config";
 
 try {
 	console.log("Initializing...");
 
-	const host = process.env.HOST;	// TODO: handle null
+	const host = process.env.HOST;
 
-	if (!host) {
-		throw "Host has not been defined!";
-	}
+	if (!host) { throw "Host has not been defined!"; }
 
-	http.createServer(function (req, res) {
-			res.writeHead(200, {"Content-Type": "text/html"});
-			res.end(`Sending test var: ${ process.env.TEST_ENV_VAR }`);
+	const app = express();
 
-			console.log("Respond has been sent sir!");
-	}).listen(host);
+	app.get("/", (req, res) => {
+  	res.send("GET /");
+	});
 
-	console.log(`SUCCESS: Listening at ${host}`);
+	app.listen(host, () => {
+		console.log(`SUCCESS: Listening at ${host}`);
+	});
 } catch (error) {
 	console.log("FAILURE: An error occured while starting the server: ", error);
 
