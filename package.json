@@ -2,17 +2,25 @@
   "name": "profiler-api",
   "version": "0.0.1",
   "description": "API for the profiler",
-	"author": "Krzysztof Woliński",
+  "author": "Krzysztof Woliński",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bodziowagh/profiler-api.git"
   },
   "homepage": "https://github.com/bodziowagh/profiler-api#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "nodemon": "^1.18.9"
+  },
   "dependencies": {
+    "dotenv": "^6.2.0",
+    "http": "0.0.0",
     "webpack": "^4.29.0"
   },
-	"scripts": {
-    "start": "nodemon src/index.ts"
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js"
   }
 }
