@@ -1,0 +1,25 @@
+version: '3'
+services:
+  app:
+    container_name: profiler-api
+    restart: always
+    build: .
+    ports:
+      - 9000:9000
+
+  db:
+    image: postgres
+    container_name: profiler-postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: profiler
+
+  # TODO: remove when you don't need it
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
